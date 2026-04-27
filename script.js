@@ -15,6 +15,7 @@ const projectGroups = [
         description:
           "This project was developed to deliver a clean, user-focused experience with responsive design and practical functionality. Built to represent a brand professionally and convert visitors into clients.",
         tags: ["HTML", "CSS", "JavaScript"],
+        thumbnailUrl: "img/temaco.png",
         previewUrl: "https://temaco.rw",
         liveUrl: "https://temaco.rw",
         theme: "violet",
@@ -29,6 +30,7 @@ const projectGroups = [
         description:
           "A polished business-facing website focused on presenting services clearly, building trust quickly, and giving potential clients a strong first impression across devices.",
         tags: ["HTML", "CSS", "JavaScript"],
+        thumbnailUrl: "img/vivenda.png",
         previewUrl: "https://vivendagc.rw",
         liveUrl: "https://vivendagc.rw",
         theme: "amber",
@@ -43,6 +45,7 @@ const projectGroups = [
         description:
           "A professional company website built to present services clearly, strengthen trust, and guide visitors toward contacting the business with confidence.",
         tags: ["Website", "Responsive", "Live"],
+        thumbnailUrl: "img/mew.png",
         previewUrl: "https://mewconsulta.com/",
         liveUrl: "https://mewconsulta.com/",
         theme: "violet",
@@ -57,6 +60,7 @@ const projectGroups = [
         description:
           "An organization-focused website built to communicate mission, programs, and community impact in a clear and accessible way across devices.",
         tags: ["Website", "Organization", "Live"],
+        thumbnailUrl: "img/ufc.png",
         previewUrl: "https://unitedforchange.rw/",
         liveUrl: "https://unitedforchange.rw/",
         theme: "amber",
@@ -71,6 +75,7 @@ const projectGroups = [
         description:
           "A business website created to present company information clearly, build credibility, and give visitors a professional path to learn about services and get in touch.",
         tags: ["Website", "Business", "Live"],
+        thumbnailUrl: "img/fido.png",
         previewUrl: "https://fidobusinessgroup.com",
         liveUrl: "https://fidobusinessgroup.com",
         theme: "emerald",
@@ -92,6 +97,7 @@ const projectGroups = [
         description:
           "A full-featured web application built around real user workflows. Emphasis on intuitive navigation, fast load times, and a structured back end that supports data integrity at scale.",
         tags: ["JavaScript", "REST API", "Node.js"],
+        thumbnailUrl: "img/behub.png",
         previewUrl: "https://behub.space",
         liveUrl: "https://behub.space",
         theme: "emerald",
@@ -191,20 +197,22 @@ function getPrimaryButtonLabel(project) {
 }
 
 function createProjectCover(project) {
+  // Thumbnail takes priority over live iframe or screenshot
+  if (project.thumbnailUrl) {
+    return `
+      <div class="card-browser__viewport card-browser__viewport--image">
+        <img
+          class="card-browser__image"
+          src="${escapeHtml(project.thumbnailUrl)}"
+          alt="${escapeHtml(project.title)} thumbnail"
+          loading="lazy"
+        />
+      </div>
+    `;
+  }
+
   const previewMode = getProjectPreviewMode(project);
   const projectUrl = getProjectUrl(project);
-  const coverScale = Number.isFinite(project.coverScale) ? project.coverScale : 0.4;
-  const coverOffsetX = Number.isFinite(project.coverOffsetX) ? `${project.coverOffsetX}px` : "0px";
-  const coverOffsetY = Number.isFinite(project.coverOffsetY) ? `${project.coverOffsetY}px` : "-32px";
-  const coverWidth = Number.isFinite(project.coverWidth) ? `${project.coverWidth}px` : "1440px";
-  const coverHeight = Number.isFinite(project.coverHeight) ? `${project.coverHeight}px` : "1024px";
-  const coverStyle = [
-    `--cover-scale: ${coverScale}`,
-    `--cover-offset-x: ${coverOffsetX}`,
-    `--cover-offset-y: ${coverOffsetY}`,
-    `--cover-width: ${coverWidth}`,
-    `--cover-height: ${coverHeight}`,
-  ].join("; ");
 
   if (previewMode === "image") {
     return `
@@ -221,7 +229,7 @@ function createProjectCover(project) {
 
   if (previewMode === "live") {
     return `
-      <div class="card-browser__viewport" style="${coverStyle}">
+      <div class="card-browser__viewport">
         <iframe
           class="card-browser__frame"
           src="${escapeHtml(projectUrl)}"

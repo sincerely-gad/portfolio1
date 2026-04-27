@@ -522,7 +522,7 @@ select {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(460px, 1fr));
   gap: 1.75rem;
 }
 
@@ -545,16 +545,16 @@ select {
 .card-image {
   position: relative;
   overflow: hidden;
-  padding: 1rem;
+  padding: 0;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(244, 244, 245, 0.9) 100%);
 }
 
 .card-browser {
-  border-radius: calc(var(--radius-lg) - 6px);
   overflow: hidden;
-  border: 1px solid rgba(24, 24, 27, 0.08);
+  border-radius: 0;
   background: #111827;
-  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);
+  display: flex;
+  flex-direction: column;
 }
 
 .card-browser__bar {
@@ -605,13 +605,11 @@ select {
 
 .card-browser__frame {
   position: absolute;
-  top: var(--cover-offset-y, -32px);
-  left: calc(50% + var(--cover-offset-x, 0px));
-  width: var(--cover-width, 1440px);
-  height: var(--cover-height, 1024px);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   border: 0;
-  transform: translateX(-50%) scale(var(--cover-scale, 0.4));
-  transform-origin: top center;
   pointer-events: none;
   background: #ffffff;
 }
@@ -679,8 +677,8 @@ select {
 
 .card-tags {
   position: absolute;
-  top: 1.7rem;
-  left: 1.7rem;
+  top: 0.85rem;
+  left: 0.85rem;
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
@@ -965,9 +963,6 @@ select {
     height: 220px;
   }
 
-  .card-browser__frame {
-    transform: translateX(-50%) scale(calc(var(--cover-scale, 0.4) - 0.04));
-  }
 
   .preview-modal {
     padding: 0.5rem;
