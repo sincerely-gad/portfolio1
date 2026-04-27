@@ -14,7 +14,7 @@ const projectGroups = [
         type: "Business Website",
         description:
           "This project was developed to deliver a clean, user-focused experience with responsive design and practical functionality. Built to represent a brand professionally and convert visitors into clients.",
-        tags: ["HTML", "CSS", "JavaScript"],
+        tags: ["React.js", "Tailwind", "JavaScript"],
         thumbnailUrl: "img/temaco.png",
         previewUrl: "https://temaco.rw",
         liveUrl: "https://temaco.rw",
@@ -31,6 +31,7 @@ const projectGroups = [
           "A polished business-facing website focused on presenting services clearly, building trust quickly, and giving potential clients a strong first impression across devices.",
         tags: ["HTML", "CSS", "JavaScript"],
         thumbnailUrl: "img/vivenda.png",
+
         previewUrl: "https://vivendagc.rw",
         liveUrl: "https://vivendagc.rw",
         theme: "amber",
@@ -44,7 +45,7 @@ const projectGroups = [
         type: "Business Website",
         description:
           "A professional company website built to present services clearly, strengthen trust, and guide visitors toward contacting the business with confidence.",
-        tags: ["Website", "Responsive", "Live"],
+        tags: ["HTML", "CSS", "JavaScript"],
         thumbnailUrl: "img/mew.png",
         previewUrl: "https://mewconsulta.com/",
         liveUrl: "https://mewconsulta.com/",
@@ -59,7 +60,7 @@ const projectGroups = [
         type: "Organization Website",
         description:
           "An organization-focused website built to communicate mission, programs, and community impact in a clear and accessible way across devices.",
-        tags: ["Website", "Organization", "Live"],
+        tags: ["HTML", "CSS", "JavaScript"],
         thumbnailUrl: "img/ufc.png",
         previewUrl: "https://unitedforchange.rw/",
         liveUrl: "https://unitedforchange.rw/",
@@ -74,7 +75,7 @@ const projectGroups = [
         type: "Business Website",
         description:
           "A business website created to present company information clearly, build credibility, and give visitors a professional path to learn about services and get in touch.",
-        tags: ["Website", "Business", "Live"],
+        tags: ["React.js", "Tailwind", "JavaScript"],
         thumbnailUrl: "img/fido.png",
         previewUrl: "https://fidobusinessgroup.com",
         liveUrl: "https://fidobusinessgroup.com",
@@ -96,7 +97,7 @@ const projectGroups = [
         type: "Web Application",
         description:
           "A full-featured web application built around real user workflows. Emphasis on intuitive navigation, fast load times, and a structured back end that supports data integrity at scale.",
-        tags: ["JavaScript", "REST API", "Node.js"],
+        tags: ["React.js", "Node.js", "JavaScript", "Tailwind", "Docker"],
         thumbnailUrl: "img/behub.png",
         previewUrl: "https://behub.space",
         liveUrl: "https://behub.space",
